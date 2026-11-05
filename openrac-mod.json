@@ -1,0 +1,30 @@
+{
+  "format": 2,
+  "id": "damage-numbers",
+  "name": "Damage numbers",
+  "version": "0.7.0",
+  "author": "LucienTo",
+  "description": "Shows how much damage each hit does, from the wrench, a weapon or a bomb: a number pops up where the hit landed, tilts and flies off in its own direction, and fades out. Hits close together on the same enemy add up into one number: yellow, orange once it adds up, red for the hit that kills.",
+  "license": "MIT",
+  "api": "1.12",
+  "games": { "rac1": ["pal", "ntsc"] },
+  "assets": "assets",
+  "settings": [
+    { "key": "duration", "name": "Duration", "type": "float", "default": 0.8, "min": 0.3, "max": 2.0, "step": 0.1,
+      "description": "How long a number flies and fades before it is gone, in seconds." },
+    { "key": "size", "name": "Size", "type": "float", "default": 1.0, "min": 0.5, "max": 2.0, "step": 0.1,
+      "description": "How big the numbers are." },
+    { "key": "style", "name": "Style", "type": "choice", "default": "props",
+      "choices": [
+        { "value": "props", "name": "In the world (every hit)" },
+        { "value": "hud", "name": "HUD text (a few at once)" }
+      ],
+      "description": "In the world: each number drawn as outlined digits in the level, facing the camera, with room for every hit. HUD text: the game's own font, at most 16 lines shared by all mods." },
+    { "key": "outline", "name": "HUD text outline", "type": "bool", "default": true,
+      "description": "HUD text only: a dark outline round each number. It takes 3 of the 16 HUD lines mods share, so at most 5 numbers show at once." },
+    { "key": "max_numbers", "name": "HUD text numbers at once", "type": "int", "default": 5, "min": 1, "max": 16,
+      "description": "HUD text only: the most numbers shown at once (at most 5 with the outline); the oldest goes first." },
+    { "key": "creatures_only", "name": "Enemies only", "type": "bool", "default": true,
+      "description": "Only enemies and people, not crates or other objects." }
+  ]
+}
