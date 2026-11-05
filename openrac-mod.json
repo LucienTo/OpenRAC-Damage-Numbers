@@ -2,7 +2,7 @@
   "format": 2,
   "id": "damage-numbers",
   "name": "Damage numbers",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "author": "LucienTo",
   "description": "Shows how much damage each hit does, from the wrench, a weapon or a bomb: a number pops up where the hit landed, tilts and flies off in its own direction, and fades out. Hits close together on the same enemy add up into one number: yellow, orange once it adds up, red for the hit that kills.",
   "license": "MIT",

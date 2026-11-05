@@ -1,0 +1,7 @@
+# The same bytes on every machine: the release workflow joins the archives each platform built
+# and refuses files (LICENSE, README.md) that differ between them, which Windows' CRLF checkout
+# would make them.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.png binary
+*.glb binary

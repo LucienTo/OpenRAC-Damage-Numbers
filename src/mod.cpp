@@ -662,4 +662,4 @@ void load(openrac::Mod& mod) {
 
 }  // namespace
 
-OPENRAC_MOD_CPP("damage-numbers", "0.7.0", load)
+OPENRAC_MOD_CPP("damage-numbers", "0.7.1", load)
