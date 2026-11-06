@@ -28,9 +28,9 @@ cl /nologo /std:c++17 /O2 /MD /EHsc /W4 /permissive- /utf-8 ^
 if errorlevel 1 exit /b 1
 
 copy /y build\damage_numbers.dll "%PKG%\lib\windows-x86_64\" >nul
-rem The digit props (tools\make_digits.py makes them).
-if not exist "%PKG%\assets" mkdir "%PKG%\assets"
-copy /y assets\* "%PKG%\assets\" >nul
+rem The glyph props, a folder per style (tools\make_digits.py makes them).
+if exist "%PKG%\assets" rmdir /s /q "%PKG%\assets"
+xcopy /e /i /q /y assets "%PKG%\assets" >nul
 if errorlevel 1 exit /b 1
 copy /y README.md "%PKG%\" >nul
 copy /y LICENSE "%PKG%\" >nul
