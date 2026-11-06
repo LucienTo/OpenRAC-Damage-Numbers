@@ -33,22 +33,22 @@ and add it there.
 
 | Setting | Default | |
 |---|---|---|
-| Style | pixel | How the digits look. Pixel: a chunky pixel font. Original: wide square digits with rounded corners, shaded bright to dark, like a game menu. Comic: square blocky digits with their outline set off down and to the right |
+| Style | original | How the digits look. Pixel: a chunky pixel font. Original: wide square digits with rounded corners, shaded bright to dark, like a game menu. Comic: square blocky digits with their outline set off down and to the right |
 | Size | 1.0 | How big the numbers are |
 | Opacity at start | 0.8 | How solid a number is when it appears; it fades from there to nothing |
 | Pop size | normal | How much bigger a number is for a moment when it appears: none, small, normal or large |
-| Flight style | fan out | Fan out (up and to either side), Straight up, Arc (thrown up and to the side, falling back down), Bounce (drops and bounces), or Random (each number picks one) |
+| Flight style | random | Fan out (up and to either side), Straight up, Arc (thrown up and to the side, falling back down), Bounce (drops and bounces), or Random (each number picks one) |
 | Duration | 0.8 s | How long a number flies and fades before it is gone |
 | Hit and many-hits colours | `#FFD700`, `#FF1E00` | A number starts in the hit colour and turns a step towards the many-hits colour with each hit added to it. Each as `#RRGGBB` |
 | Hits to full colour | 6 | How many hits turn a number fully the many-hits colour |
 | Kill colour on | off | Show the hit that kills in the kill colour. Off, it keeps the colour its hits gave it (many enemies die in one hit) |
 | Kill colour | `#FF2828` | The number of the hit that kills, with Kill colour on, as `#RRGGBB` |
-| Kill effect | spin and fall | What the number does when its enemy dies: Spin and fall (jumps a little, spins and drops to the ground), Break apart (its digits fly apart, each spinning and falling), or None (it flies on as any number, and fades out over the whole duration from the kill). It fades out as it goes |
+| Kill effect | break apart | What the number does when its enemy dies: Spin and fall (jumps a little, spins and drops to the ground), Break apart (its digits fly apart, each spinning and falling), or None (it flies on as any number, and fades out over the whole duration from the kill). It fades out as it goes |
 | Enemies only | on | Only enemies and people, not crates or other objects |
-| Brightness boost | on | Brighter numbers, so dark places do not dim them |
+| Brightness boost | off | Brighter numbers, so dark places do not dim them |
 | Glow in the dark (experimental) | off | Numbers light themselves, so they show in dark places. Only with OpenRAC's enhanced rendering on (Vulkan only): at the start of each level the mod checks, and without it uses the regular numbers. They glow in the colours set above; the hit colours in up to 6 steps |
 | Critical colour (experimental) | `#3CE6FF` | The number of a critical hit, as `#RRGGBB` |
-| Critical mark (experimental) | on | An exclamation mark after a critical hit's number |
+| Critical mark (experimental) | off | An exclamation mark after a critical hit's number |
 | Critical preview (experimental) | 0% | The game has no critical hits yet: this share of hits is shown as critical (bigger, shaking, in the critical colour) to try the look |
 | Log hits | off | For bug reports: a line in the game's log for every hit the mod reads (what was hit, the kind and damage of the hit, who hit it, and whether a number showed or why not) |
 
@@ -70,6 +70,7 @@ Say which version of the mod and of OpenRAC you use, PAL or NTSC-U, and what you
 
 | Version | |
 |---|---|
+| 0.8.1 | New defaults: the original style, random flight, break apart as the kill effect, brightness boost and the critical mark off. Settings you changed yourself stay as you set them |
 | 0.8.0 | Three digit styles (pixel, original, comic), flight styles (fan out, straight up, arc, bounce, random), opacity, pop size, brightness boost, custom colours, and critical hits ready for later (with a preview setting). The HUD text style is gone: numbers are always drawn in the world. Each hit on an enemy restarts its number at that hit with the added-up value, a step hotter in colour (yellow to red) per hit; a kill effect (spin and fall, or break apart) after a short pause; the kill colour as a setting, off by default; Glow in the dark (experimental, enhanced rendering only) for dark places; a Log hits setting for bug reports. Fixed: a frog's bite showed numbers on other frogs; frogs killed outright early in a level showed no number; a wrench swing hitting several enemies showed 10, 20, 30 instead of 10 each; an enemy killed outright by a weapon (Logging Site's exploding one) showed no number; a kill counts at the killing blow, not when an enemy that flies off is deleted |
 | 0.7.1 | The release archives build the same on every platform (no change in the game) |
 | 0.7.0 | A number stays where its hit landed instead of following the enemy |

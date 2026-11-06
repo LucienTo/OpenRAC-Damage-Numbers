@@ -176,19 +176,19 @@ struct Settings {
     bool creatures_only = true;
     bool log_hits = false;
     bool glow = false;  // the self-lit glyphs (assets/<style>/glow/)
-    Style style = Style::Pixel;
-    Flight flight = Flight::Fan;
-    KillEffect kill_effect = KillEffect::Spin;
+    Style style = Style::Original;
+    Flight flight = Flight::Random;
+    KillEffect kill_effect = KillEffect::Shatter;
     float opacity = 0.8f;
     float pop = 1.5f;  // how big a number starts, times its size
-    bool boost = true;
+    bool boost = false;
     Rgb hit{255, 215, 0};      // bright yellow: one hit
     Rgb hot{255, 30, 0};       // red: a number of `heat_hits` hits or more
     int heat_hits = 6;         // the hits a number takes to go from `hit` to `hot`
     bool kill_colour = false;  // the hit that killed in `killed`, else in its heat colour
     Rgb killed{255, 40, 40};   // red: the hit that killed
     Rgb critical{60, 230, 255};  // light blue
-    bool critical_mark = true;
+    bool critical_mark = false;
     float critical_preview = 0.0f;  // the share of hits shown as critical, 0 to 1
 };
 
@@ -1431,4 +1431,4 @@ void load(openrac::Mod& mod) {
 
 }  // namespace
 
-OPENRAC_MOD_CPP("damage-numbers", "0.8.0", load)
+OPENRAC_MOD_CPP("damage-numbers", "0.8.1", load)

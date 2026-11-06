@@ -2,7 +2,7 @@
   "format": 2,
   "id": "damage-numbers",
   "name": "Damage numbers",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "author": "LucienTo",
   "description": "Shows how much damage each hit does, from the wrench, a weapon or a bomb: a number pops up where the hit landed, flies off and fades out, in the flight style and colours you choose. Hits on the same enemy add up into one number while it shows, each hit renewing it.",
   "license": "MIT",
@@ -11,7 +11,7 @@
   "assets": "assets",
   "hooks": ["rac1.moby.record_death"],
   "settings": [
-    { "key": "style", "name": "Style", "type": "choice", "default": "pixel",
+    { "key": "style", "name": "Style", "type": "choice", "default": "original",
       "choices": [
         { "value": "pixel", "name": "Pixel" },
         { "value": "original", "name": "Original" },
@@ -30,7 +30,7 @@
         { "value": "large", "name": "Large" }
       ],
       "description": "How much bigger a number is for a moment when it appears, or when a hit adds to it." },
-    { "key": "flight", "name": "Flight style", "type": "choice", "default": "fan",
+    { "key": "flight", "name": "Flight style", "type": "choice", "default": "random",
       "choices": [
         { "value": "fan", "name": "Fan out" },
         { "value": "straight", "name": "Straight up" },
@@ -51,7 +51,7 @@
       "description": "Show the hit that kills in the kill colour. Off: it keeps the colour its hits gave it (many enemies die in one hit, so with this on most numbers would be the kill colour)." },
     { "key": "color_kill", "name": "Kill colour", "type": "string", "default": "#FF2828", "max_length": 7,
       "description": "The colour of the hit that kills, as #RRGGBB." },
-    { "key": "kill_effect", "name": "Kill effect", "type": "choice", "default": "spin",
+    { "key": "kill_effect", "name": "Kill effect", "type": "choice", "default": "shatter",
       "choices": [
         { "value": "spin", "name": "Spin and fall" },
         { "value": "shatter", "name": "Break apart" },
@@ -60,13 +60,13 @@
       "description": "What the number does when its enemy dies. Spin and fall: it jumps a little, spins and drops to the ground. Break apart: its digits fly apart, each spinning and falling. None: it flies on as any number. It fades out as it goes." },
     { "key": "creatures_only", "name": "Enemies only", "type": "bool", "default": true,
       "description": "Only enemies and people, not crates or other objects." },
-    { "key": "brightness_boost", "name": "Brightness boost", "type": "bool", "default": true,
+    { "key": "brightness_boost", "name": "Brightness boost", "type": "bool", "default": false,
       "description": "Brighten the numbers, so dark places in the level do not dim them." },
     { "key": "glow", "name": "Glow in the dark (experimental)", "type": "bool", "default": false,
       "description": "Numbers light themselves, so they show in dark places. Only with OpenRAC's enhanced rendering on (Vulkan only): each level the mod checks, and without it uses the regular numbers. They glow in the colours set here (the hit colours in up to 6 steps), from the game's next start after a change." },
     { "key": "color_critical", "name": "Critical colour (experimental)", "type": "string", "default": "#3CE6FF", "max_length": 7,
       "description": "The colour of a critical hit, as #RRGGBB." },
-    { "key": "critical_mark", "name": "Critical mark (experimental)", "type": "bool", "default": true,
+    { "key": "critical_mark", "name": "Critical mark (experimental)", "type": "bool", "default": false,
       "description": "An exclamation mark after a critical hit's number." },
     { "key": "critical_preview", "name": "Critical preview (experimental)", "type": "int", "default": 0, "min": 0, "max": 100,
       "description": "The game has no critical hits yet. This share of hits, in percent, is shown as critical (bigger, shaking, in the critical colour) to try the look. 0 for none." },
